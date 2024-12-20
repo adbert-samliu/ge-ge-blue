@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    html, body {
+      margin: 0;
+      height: 100%;
+      overflow: hidden;
+    }
+    button {
+      width: 200px;
+      height: 200px;
+    }
+    #container {
+      display: none;
+      inset: 0;
+      position: absolute;
+      width: 100vh;
+      height: 100vh;
+      background-color: black;
+    }
+    #text {
+      white-space: nowrap;
+      font-size: 300px;
+      font-weight: bold;
+      color: white;
+      /* translate: -25% 0px; */
+      rotate: -90deg;
+      animation: identifier 7s infinite linear;
+    }
+    @keyframes identifier {
+      0% {
+        transform: translateX(250vh) translateY(-50%);
+      }
+      100% {
+        transform: translateX(-250vh) translateY(-50%);
+      }
+      
+    }
+  </style>
+</head>
+<body>
+  <button id="t1" onclick="textChange('間奏中請稍候')">間奏中請稍候</button>
+  <button id="t2" onclick="textChange('來賓請掌聲鼓勵')">來賓請掌聲鼓勵</button>
+  <div id="container">
+    <div id="text"></div>
+  </div>
+  <script>
+    const text = document.getElementById('text');
+    function textChange(content) {
+      console.log('click');
+      container.style.display = 'block';
+      text.innerText = content;
+    }
+  </script>
+</body>
+</html>
